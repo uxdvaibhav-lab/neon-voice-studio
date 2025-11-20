@@ -6,6 +6,7 @@ import { useState } from "react";
 // Interactive Breakeven Chart Component
 const InteractiveBreakevenChart = () => {
   const [hoveredPoint, setHoveredPoint] = useState(null);
+  const [mousePos, setMousePos] = useState({x: 0, y: 0});
   
   const chartData = [
     {year: 1, savings: -20000}, {year: 2, savings: -15000}, {year: 3, savings: -10000},
@@ -63,7 +64,11 @@ const InteractiveBreakevenChart = () => {
               r="6"
               fill="#f97316"
               className="cursor-pointer hover:r-8 transition-all"
-              onMouseEnter={() => setHoveredPoint({year: point.year, savings: point.savings})}
+              onMouseEnter={(e) => {
+                setHoveredPoint({year: point.year, savings: point.savings});
+                setMousePos({x: e.clientX, y: e.clientY});
+              }}
+              onMouseMove={(e) => setMousePos({x: e.clientX, y: e.clientY})}
               onMouseLeave={() => setHoveredPoint(null)}
             />
           );
@@ -75,7 +80,10 @@ const InteractiveBreakevenChart = () => {
       </svg>
       
       {hoveredPoint && (
-        <div className="absolute bg-gray-900 text-white px-3 py-2 rounded-lg text-sm pointer-events-none z-10 top-4 right-4">
+        <div 
+          className="fixed bg-gray-900 text-white px-3 py-2 rounded-lg text-sm pointer-events-none z-50"
+          style={{left: mousePos.x + 10, top: mousePos.y + 10}}
+        >
           <div className="font-semibold">Year {hoveredPoint.year}</div>
           <div className="text-orange-300">
             {hoveredPoint.savings >= 0 ? `+$${hoveredPoint.savings.toLocaleString()}` : `-$${Math.abs(hoveredPoint.savings).toLocaleString()}`}
