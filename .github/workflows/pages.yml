@@ -33,9 +33,9 @@ jobs:
           path: ./dist
 
   deploy:
-      environment:
-            name: github-pages
-                  url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -46,5 +46,5 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Deploy to GitHub Pages
-                id: deployment
+        id: deployment
         uses: actions/deploy-pages@v4
