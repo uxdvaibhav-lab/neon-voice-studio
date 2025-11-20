@@ -488,7 +488,7 @@ const Index = () => {
     },
   ];
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen bg-gray-50 p-6">
       {/* Mobile Header - Only visible on mobile/tablet */}
       <MobileHeader
         navigationDrawer={
@@ -634,7 +634,7 @@ const Index = () => {
         {/* App Content */}
         <div className="flex h-[calc(100vh-8rem)] relative">
           {/* Left Sidebar - Hidden on mobile, visible on tablet+ */}
-          <aside className="hidden md:flex w-12 md:w-16 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
+          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
             <nav className="flex flex-col items-center gap-2 flex-1">
               {navItems.map((item, index) => (
                 <button
@@ -845,7 +845,7 @@ const Index = () => {
                         <span className="font-semibold text-gray-900">$1,550</span>
                       </EditableTextMock>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 bg-white px-6 py-4">
+                    <div className="grid grid-cols-2 gap-4 bg-gray-50 px-6 py-4">
                       <span className="font-bold text-gray-900 text-left">Total System Cost</span>
                       <EditableTextMock className="text-right">
                         <span className="font-bold text-gray-900">$26,250</span>
@@ -1221,12 +1221,12 @@ const Index = () => {
           </main>
 
           {/* Right Panel - Hidden on mobile/tablet, visible on desktop */}
-          <aside className="hidden lg:block lg:w-64 xl:w-80 border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
+          <aside className="hidden lg:block lg:w-64 xl:w-80 bg-gray-50 border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Quick Stats</h3>
                 <div className="space-y-3">
-                  <div className="p-3 rounded-lg bg-white border border-gray-200">
+                  <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
                     <EditableTextMock
                       className="text-xs text-gray-500 block"
                       improvedText="Return on Investment Timeline"
@@ -1237,7 +1237,7 @@ const Index = () => {
                       <div className="text-lg font-bold text-brand-teal">8.5 Years</div>
                     </EditableTextMock>
                   </div>
-                  <div className="p-3 rounded-lg bg-white border border-gray-200">
+                  <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
                     <EditableTextMock className="text-xs text-gray-500 block" improvedText="Total Lifetime Savings">
                       <div className="text-xs text-gray-500">25-Year Savings</div>
                     </EditableTextMock>
@@ -1245,7 +1245,7 @@ const Index = () => {
                       <div className="text-lg font-bold text-brand-teal">$58,500</div>
                     </EditableTextMock>
                   </div>
-                  <div className="p-3 rounded-lg bg-white border border-gray-200">
+                  <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
                     <EditableTextMock className="text-xs text-gray-500 block" improvedText="Carbon Emissions Offset">
                       <div className="text-xs text-gray-500">CO₂ Offset</div>
                     </EditableTextMock>
@@ -1330,7 +1330,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="sticky bottom-0 pt-4 pb-4 space-y-3 border-t border-border mt-6">
+              <div className="sticky bottom-0 pt-4 pb-4 space-y-3 border-t border-border mt-6 bg-gray-50">
                 <Button variant="outline-orange" className="w-full" onClick={() => navigate("/preview")}>
                   Preview
                 </Button>
