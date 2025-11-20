@@ -3,12 +3,105 @@ import { Button } from "@/components/ui/button";
 import { X, Download, Share2, Sun } from "lucide-react";
 import { useState } from "react";
 
+// Interactive Breakeven Chart Component
+const InteractiveBreakevenChart = () => {
+  const [hoveredPoint, setHoveredPoint] = useState(null);
+  
+  const chartData = [
+    {year: 1, savings: -20000}, {year: 2, savings: -15000}, {year: 3, savings: -10000},
+    {year: 4, savings: -5000}, {year: 5, savings: -2000}, {year: 6, savings: 0},
+    {year: 7, savings: 5000}, {year: 8, savings: 12000}, {year: 10, savings: 25000},
+    {year: 15, savings: 45000}, {year: 20, savings: 60000}, {year: 25, savings: 68420}
+  ];
+  
+  const getChartPoint = (year, savings) => {
+    const x = 60 + ((year - 1) / 24) * 680;
+    const y = 250 - ((savings + 20000) / 88420) * 220;
+    return {x, y};
+  };
+  
+  const pathData = chartData.map((point, index) => {
+    const {x, y} = getChartPoint(point.year, point.savings);
+    return index === 0 ? `M ${x} ${y}` : `L ${x} ${y}`;
+  }).join(' ');
+  
+  return (
+    <div className="relative h-80 bg-gray-50 rounded-lg p-4">
+      <svg className="w-full h-full" viewBox="0 0 800 300">
+        <defs>
+          <pattern id="grid" width="32" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 32 0 L 0 0 0 30" fill="none" stroke="#e5e7eb" strokeWidth="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+        
+        <line x1="60" y1="250" x2="740" y2="250" stroke="#374151" strokeWidth="2"/>
+        <line x1="60" y1="250" x2="60" y2="30" stroke="#374151" strokeWidth="2"/>
+        
+        <text x="45" y="255" textAnchor="end" className="text-xs fill-gray-600">$0</text>
+        <text x="45" y="200" textAnchor="end" className="text-xs fill-gray-600">$20k</text>
+        <text x="45" y="145" textAnchor="end" className="text-xs fill-gray-600">$40k</text>
+        <text x="45" y="90" textAnchor="end" className="text-xs fill-gray-600">$60k</text>
+        
+        <text x="60" y="270" textAnchor="middle" className="text-xs fill-gray-600">1</text>
+        <text x="200" y="270" textAnchor="middle" className="text-xs fill-gray-600">6</text>
+        <text x="400" y="270" textAnchor="middle" className="text-xs fill-gray-600">15</text>
+        <text x="740" y="270" textAnchor="middle" className="text-xs fill-gray-600">25</text>
+        
+        <line x1="200" y1="30" x2="200" y2="250" stroke="#f97316" strokeWidth="2" strokeDasharray="5,5"/>
+        <rect x="200" y="30" width="540" height="220" fill="#f97316" fillOpacity="0.1"/>
+        
+        <path d={pathData} fill="none" stroke="#f97316" strokeWidth="3"/>
+        
+        {chartData.map((point, index) => {
+          const {x, y} = getChartPoint(point.year, point.savings);
+          return (
+            <circle
+              key={index}
+              cx={x}
+              cy={y}
+              r="6"
+              fill="#f97316"
+              className="cursor-pointer hover:r-8 transition-all"
+              onMouseEnter={() => setHoveredPoint({year: point.year, savings: point.savings})}
+              onMouseLeave={() => setHoveredPoint(null)}
+            />
+          );
+        })}
+        
+        <text x="200" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Breakeven</text>
+        <text x="470" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Pure Savings Years 7-25</text>
+        <text x="740" y="60" textAnchor="middle" className="text-sm font-semibold fill-orange-600">$68,420</text>
+      </svg>
+      
+      {hoveredPoint && (
+        <div className="absolute bg-gray-900 text-white px-3 py-2 rounded-lg text-sm pointer-events-none z-10 top-4 right-4">
+          <div className="font-semibold">Year {hoveredPoint.year}</div>
+          <div className="text-orange-300">
+            {hoveredPoint.savings >= 0 ? `+$${hoveredPoint.savings.toLocaleString()}` : `-$${Math.abs(hoveredPoint.savings).toLocaleString()}`}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Add CSS animation for line drawing
+const chartStyles = `
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+`;
+
 const PreviewProposal = () => {
   const navigate = useNavigate();
   const [financingOption, setFinancingOption] = useState<'cash' | 'loan' | 'lease'>('loan');
 
   return (
     <div className="min-h-screen bg-background">
+      <style>{chartStyles}</style>
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -253,57 +346,7 @@ const PreviewProposal = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">25-Year Solar Financial Outlook</h3>
               <p className="text-sm text-gray-600 mb-4">Shows break-even point, pure savings years, and home value impact after installing solar</p>
               
-              <div className="relative h-80 bg-gray-50 rounded-lg p-4">
-                <svg className="w-full h-full" viewBox="0 0 800 300">
-                  {/* Grid lines */}
-                  <defs>
-                    <pattern id="grid" width="32" height="30" patternUnits="userSpaceOnUse">
-                      <path d="M 32 0 L 0 0 0 30" fill="none" stroke="#e5e7eb" strokeWidth="1"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                  
-                  {/* Axes */}
-                  <line x1="60" y1="250" x2="740" y2="250" stroke="#374151" strokeWidth="2"/>
-                  <line x1="60" y1="250" x2="60" y2="30" stroke="#374151" strokeWidth="2"/>
-                  
-                  {/* Y-axis labels */}
-                  <text x="45" y="255" textAnchor="end" className="text-xs fill-gray-600">$0</text>
-                  <text x="45" y="200" textAnchor="end" className="text-xs fill-gray-600">$20k</text>
-                  <text x="45" y="145" textAnchor="end" className="text-xs fill-gray-600">$40k</text>
-                  <text x="45" y="90" textAnchor="end" className="text-xs fill-gray-600">$60k</text>
-                  <text x="45" y="35" textAnchor="end" className="text-xs fill-gray-600">$80k</text>
-                  
-                  {/* X-axis labels */}
-                  <text x="60" y="270" textAnchor="middle" className="text-xs fill-gray-600">1</text>
-                  <text x="200" y="270" textAnchor="middle" className="text-xs fill-gray-600">6</text>
-                  <text x="400" y="270" textAnchor="middle" className="text-xs fill-gray-600">15</text>
-                  <text x="740" y="270" textAnchor="middle" className="text-xs fill-gray-600">25</text>
-                  
-                  {/* Breakeven line */}
-                  <line x1="200" y1="30" x2="200" y2="250" stroke="#f97316" strokeWidth="2" strokeDasharray="5,5"/>
-                  
-                  {/* Main savings curve */}
-                  <path d="M 60,250 Q 150,240 200,250 Q 300,200 400,150 Q 550,100 740,70" 
-                        fill="none" stroke="#f97316" strokeWidth="3"/>
-                  
-                  {/* Pure savings highlight */}
-                  <rect x="200" y="30" width="540" height="220" fill="#f97316" fillOpacity="0.1"/>
-                  
-                  {/* Key points */}
-                  <circle cx="200" cy="250" r="5" fill="#f97316"/>
-                  <circle cx="740" cy="70" r="5" fill="#f97316"/>
-                  
-                  {/* Home value bar */}
-                  <rect x="720" y="180" width="15" height="70" fill="#10b981"/>
-                  
-                  {/* Annotations */}
-                  <text x="200" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Breakeven</text>
-                  <text x="470" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Pure Savings Years 7-25</text>
-                  <text x="740" y="60" textAnchor="middle" className="text-sm font-semibold fill-orange-600">$68,420</text>
-                  <text x="727" y="175" textAnchor="middle" className="text-xs fill-green-600">+$21k Home Value</text>
-                </svg>
-              </div>
+              <InteractiveBreakevenChart />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
