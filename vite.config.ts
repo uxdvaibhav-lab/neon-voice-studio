@@ -5,10 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use relative asset paths so the build can be served from GitHub Pages
-  // (works without knowing the repo name). This makes all built asset
-  // references use './' so they are relative to the served HTML file.
-  base: './',
+  // GitHub Pages base path
+  base: process.env.NODE_ENV === 'production' ? '/neon-voice-studio/' : '/',
   server: {
     host: "::",
     port: 8080,
