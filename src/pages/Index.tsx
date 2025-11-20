@@ -1330,7 +1330,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="sticky bottom-0 pt-4 pb-4 space-y-3 border-t border-border mt-6 bg-gray-50">
+              <div className="sticky bottom-0 pt-4 pb-0 space-y-3 border-t border-border mt-6 bg-gray-50">
                 <Button variant="outline-orange" className="w-full" onClick={() => navigate("/preview")}>
                   Preview
                 </Button>
