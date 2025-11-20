@@ -735,28 +735,28 @@ const Index = () => {
                 <div className="mb-10">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">System Cost Breakdown</h3>
                   <div className="w-full border border-gray-200 rounded-lg overflow-hidden">
-                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-4 py-3">
-                      <span className="text-gray-700">Equipment</span>
+                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 flex-1">Equipment</span>
                       <EditableTextMock>
-                        <span className="font-semibold text-gray-900">$18,500</span>
+                        <span className="font-semibold text-gray-900 ml-6">$18,500</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-4 py-3">
-                      <span className="text-gray-700">Labor & Installation</span>
+                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 flex-1">Labor & Installation</span>
                       <EditableTextMock>
-                        <span className="font-semibold text-gray-900">$6,200</span>
+                        <span className="font-semibold text-gray-900 ml-6">$6,200</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-4 py-3">
-                      <span className="text-gray-700">Permitting & Inspection</span>
+                    <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 flex-1">Permitting & Inspection</span>
                       <EditableTextMock>
-                        <span className="font-semibold text-gray-900">$1,550</span>
+                        <span className="font-semibold text-gray-900 ml-6">$1,550</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex justify-between items-center w-full bg-gray-50 px-4 py-3">
-                      <span className="font-bold text-gray-900">Total System Cost</span>
+                    <div className="flex justify-between items-center w-full bg-gray-50 px-6 py-4">
+                      <span className="font-bold text-gray-900 flex-1">Total System Cost</span>
                       <EditableTextMock>
-                        <span className="font-bold text-gray-900">$26,250</span>
+                        <span className="font-bold text-gray-900 ml-6">$26,250</span>
                       </EditableTextMock>
                     </div>
                   </div>
