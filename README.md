@@ -1,4 +1,4 @@
-# Neon Voice Studio
+# Solar Proposal Tool
 
 A modern solar proposal tool built with React, TypeScript, and Tailwind CSS.
 
@@ -29,7 +29,7 @@ A modern solar proposal tool built with React, TypeScript, and Tailwind CSS.
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd neon-voice-studio
+cd SolarProposalTool
 ```
 
 2. Install dependencies:
