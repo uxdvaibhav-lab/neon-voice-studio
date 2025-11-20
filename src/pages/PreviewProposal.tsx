@@ -127,7 +127,20 @@ const PreviewProposal = () => {
               <Download className="w-4 h-4 mr-2" />
               Download PDF
             </Button>
-            <Button variant="outline" size="sm" className="hidden sm:flex">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="hidden sm:flex"
+              onClick={() => toast.success("Proposal link copied to clipboard!", {
+                position: "bottom-center",
+                duration: 3000,
+                style: {
+                  background: "#f97316",
+                  color: "white",
+                  border: "none"
+                }
+              })}
+            >
               <Share2 className="w-4 h-4 mr-2" />
               Share
             </Button>
