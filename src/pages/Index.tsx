@@ -735,27 +735,27 @@ const Index = () => {
                 <div className="mb-10">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">System Cost Breakdown</h3>
                   <div className="w-full border border-gray-200 rounded-lg overflow-hidden">
-                    <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
-                      <span className="text-gray-700">Equipment</span>
-                      <EditableTextMock className="ml-auto">
+                    <div className="grid grid-cols-2 gap-4 border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 text-left">Equipment</span>
+                      <EditableTextMock className="text-right">
                         <span className="font-semibold text-gray-900">$18,500</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
-                      <span className="text-gray-700">Labor & Installation</span>
-                      <EditableTextMock className="ml-auto">
+                    <div className="grid grid-cols-2 gap-4 border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 text-left">Labor & Installation</span>
+                      <EditableTextMock className="text-right">
                         <span className="font-semibold text-gray-900">$6,200</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
-                      <span className="text-gray-700">Permitting & Inspection</span>
-                      <EditableTextMock className="ml-auto">
+                    <div className="grid grid-cols-2 gap-4 border-b border-gray-200 px-6 py-4">
+                      <span className="text-gray-700 text-left">Permitting & Inspection</span>
+                      <EditableTextMock className="text-right">
                         <span className="font-semibold text-gray-900">$1,550</span>
                       </EditableTextMock>
                     </div>
-                    <div className="flex items-center w-full bg-gray-50 px-6 py-4">
-                      <span className="font-bold text-gray-900">Total System Cost</span>
-                      <EditableTextMock className="ml-auto">
+                    <div className="grid grid-cols-2 gap-4 bg-gray-50 px-6 py-4">
+                      <span className="font-bold text-gray-900 text-left">Total System Cost</span>
+                      <EditableTextMock className="text-right">
                         <span className="font-bold text-gray-900">$26,250</span>
                       </EditableTextMock>
                     </div>
