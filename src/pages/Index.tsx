@@ -631,8 +631,8 @@ const Index = () => {
                     </div>
                     <div className="border border-gray-200 rounded-lg p-4">
                       <div className="text-sm text-gray-600 mb-1">Rate Increase</div>
-                      <EditableTextMock className="text-3xl font-bold text-orange-600">
-                        <div className="text-3xl font-medium text-orange-600">2.5%/year</div>
+                      <EditableTextMock className="text-3xl font-bold text-gray-900">
+                        <div className="text-3xl font-bold text-gray-900">2.5%/year</div>
                       </EditableTextMock>
                     </div>
                   </div>
