@@ -178,21 +178,21 @@ const PreviewProposal = () => {
           <div className="mb-10">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">System Cost Breakdown</h3>
             <div className="w-full border border-gray-200 rounded-lg overflow-hidden">
-              <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
-                <span className="text-gray-700 flex-1">Equipment</span>
-                <span className="font-semibold text-gray-900 ml-6">$18,500</span>
+              <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
+                <span className="text-gray-700">Equipment</span>
+                <span className="font-semibold text-gray-900 ml-auto">$18,500</span>
               </div>
-              <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
-                <span className="text-gray-700 flex-1">Labor & Installation</span>
-                <span className="font-semibold text-gray-900 ml-6">$6,200</span>
+              <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
+                <span className="text-gray-700">Labor & Installation</span>
+                <span className="font-semibold text-gray-900 ml-auto">$6,200</span>
               </div>
-              <div className="flex justify-between items-center w-full border-b border-gray-200 px-6 py-4">
-                <span className="text-gray-700 flex-1">Permitting & Inspection</span>
-                <span className="font-semibold text-gray-900 ml-6">$1,550</span>
+              <div className="flex items-center w-full border-b border-gray-200 px-6 py-4">
+                <span className="text-gray-700">Permitting & Inspection</span>
+                <span className="font-semibold text-gray-900 ml-auto">$1,550</span>
               </div>
-              <div className="flex justify-between items-center w-full bg-gray-50 px-6 py-4">
-                <span className="font-bold text-gray-900 flex-1">Total System Cost</span>
-                <span className="font-bold text-gray-900 ml-6">$26,250</span>
+              <div className="flex items-center w-full bg-gray-50 px-6 py-4">
+                <span className="font-bold text-gray-900">Total System Cost</span>
+                <span className="font-bold text-gray-900 ml-auto">$26,250</span>
               </div>
             </div>
           </div>
