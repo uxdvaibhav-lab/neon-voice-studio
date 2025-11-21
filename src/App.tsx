@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/neon-voice-studio' : '/'}>
+      <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/SolarProposal-Tool' : '/'}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/preview" element={<PreviewProposal />} />
