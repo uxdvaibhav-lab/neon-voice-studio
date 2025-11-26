@@ -664,7 +664,7 @@ const Index = () => {
         {/* App Content */}
         <div className="flex h-screen relative">
           {/* Left Sidebar - Hidden on mobile, visible on tablet+ */}
-          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center animate-in slide-in-from-left duration-500 h-full">
+          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center animate-in slide-in-from-left duration-500 h-screen">
             <nav className="flex flex-col items-center gap-2 pt-6">
               {navItems.map((item, index) => (
                 <button
