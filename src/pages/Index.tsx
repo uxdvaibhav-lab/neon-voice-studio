@@ -612,6 +612,36 @@ const Index = () => {
 
             <Separator orientation="vertical" className="h-6 mx-1" />
 
+            {/* Preview Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
+              onClick={() => navigate("/preview")}
+            >
+              <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline text-xs sm:text-sm">Preview</span>
+            </Button>
+
+            {/* Send Proposal Button */}
+            <Button
+              size="sm"
+              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 bg-brand-orange hover:bg-brand-orange/90 text-white"
+              onClick={() => toast.success("Proposal sent successfully!", {
+                position: "bottom-center",
+                duration: 3000,
+                style: {
+                  background: "#f97316",
+                  color: "white",
+                  border: "none"
+                }
+              })}
+            >
+              <span className="hidden sm:inline text-xs sm:text-sm">Send</span>
+            </Button>
+
+            <Separator orientation="vertical" className="h-6 mx-1" />
+
             {/* Profile Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -1285,27 +1315,6 @@ const Index = () => {
           {/* Right Panel - Hidden on mobile/tablet, visible on desktop */}
           <aside className="hidden lg:block lg:w-64 xl:w-80 bg-gray-50 border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
             <div className="space-y-6">
-              {/* Preview and Send Buttons - Moved to top */}
-              <div className="space-y-3">
-                <Button variant="outline-orange" className="w-full" onClick={() => navigate("/preview")}>
-                  Preview
-                </Button>
-                <Button 
-                  className="w-full bg-brand-orange hover:bg-brand-orange/90 hover:shadow-md text-white transition-all"
-                  onClick={() => toast.success("Proposal sent successfully!", {
-                    position: "bottom-center",
-                    duration: 3000,
-                    style: {
-                      background: "#f97316",
-                      color: "white",
-                      border: "none"
-                    }
-                  })}
-                >
-                  Send Proposal
-                </Button>
-              </div>
-
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Quick Stats</h3>
                 <div className="space-y-3">
