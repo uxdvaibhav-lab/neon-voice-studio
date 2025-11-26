@@ -488,7 +488,7 @@ const Index = () => {
     },
   ];
   return (
-    <div className="min-h-screen bg-white p-6">
+    <div className="min-h-screen bg-white">
       {/* Mobile Header - Only visible on mobile/tablet */}
       <MobileHeader
         navigationDrawer={
@@ -499,9 +499,9 @@ const Index = () => {
       />
 
       {/* Desktop App Frame */}
-      <div className="max-w-[120rem] mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white animate-in fade-in duration-700 mt-[56px] md:mt-0">
+      <div className="w-full h-full bg-white animate-in fade-in duration-700 mt-[56px] md:mt-0">
         {/* Window Title Bar - Hidden on mobile/tablet */}
-        <div className="hidden md:flex items-center justify-between px-2 sm:px-4 md:px-6 py-3 md:py-4 bg-white border-b border-gray-200">
+        <div className="hidden md:flex items-center justify-between px-2 sm:px-4 md:px-6 py-3 md:py-4 bg-white">
           {/* App Info */}
           <div className="flex items-center gap-3">
             <div>
@@ -634,7 +634,7 @@ const Index = () => {
         {/* App Content */}
         <div className="flex h-[calc(100vh-8rem)] relative">
           {/* Left Sidebar - Hidden on mobile, visible on tablet+ */}
-          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
+          <aside className="hidden md:flex w-12 md:w-16 bg-white border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
             <nav className="flex flex-col items-center gap-2 flex-1">
               {navItems.map((item, index) => (
                 <button
@@ -1283,7 +1283,7 @@ const Index = () => {
           </main>
 
           {/* Right Panel - Hidden on mobile/tablet, visible on desktop */}
-          <aside className="hidden lg:block lg:w-64 xl:w-80 bg-gray-50 border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
+          <aside className="hidden lg:block lg:w-64 xl:w-80 bg-white border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
             <div className="space-y-6">
               {/* Preview and Send Buttons - Moved to top */}
               <div className="space-y-3">
