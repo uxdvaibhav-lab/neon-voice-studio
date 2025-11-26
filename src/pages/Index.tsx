@@ -42,6 +42,7 @@ import { ProfileMenu } from "@/components/controls/ProfileMenu";
 import { NavigationDrawer } from "@/components/NavigationDrawer";
 import { MobileHeader } from "@/components/MobileHeader";
 import { FloatingActionButtons } from "@/components/FloatingActionButtons";
+import { OnboardingTutorial } from "@/components/OnboardingTutorial";
 
 // Utility function to extract text content from React children
 const extractTextFromChildren = (children: React.ReactNode): string => {
@@ -254,6 +255,7 @@ const EditableTextMock = ({
 const Index = () => {
   const navigate = useNavigate();
   const [selectedFinancing, setSelectedFinancing] = useState<"cash" | "loan" | "lease">("cash");
+  const [showTutorial, setShowTutorial] = useState(false);
 
   // Mock data for controls
   const mockVersions = [
@@ -510,6 +512,14 @@ const Index = () => {
               </h1>
               <p className="text-xs sm:text-sm text-gray-500">Advanced Solar Design System</p>
             </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowTutorial(true)}
+              className="text-xs text-orange-600 hover:text-orange-700"
+            >
+              Tutorial
+            </Button>
           </div>
 
           {/* Window Actions */}
@@ -518,6 +528,7 @@ const Index = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
+                  data-tutorial="document-controls"
                   variant="ghost"
                   size="sm"
                   className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
@@ -546,6 +557,7 @@ const Index = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
+                  data-tutorial="design-controls"
                   variant="ghost"
                   size="sm"
                   className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
@@ -578,6 +590,7 @@ const Index = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
+                  data-tutorial="team-controls"
                   variant="ghost"
                   size="sm"
                   className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent relative"
@@ -614,6 +627,7 @@ const Index = () => {
 
             {/* Preview Button */}
             <Button
+              data-tutorial="preview-send"
               variant="outline"
               size="sm"
               className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
@@ -664,7 +678,7 @@ const Index = () => {
         {/* App Content */}
         <div className="flex h-screen relative">
           {/* Left Sidebar - Hidden on mobile, visible on tablet+ */}
-          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
+          <aside data-tutorial="left-sidebar" className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
             <nav className="flex flex-col items-center gap-2 flex-1">
               {navItems.map((item, index) => (
                 <button
@@ -1308,7 +1322,7 @@ const Index = () => {
           {/* Right Panel - Hidden on mobile/tablet, visible on desktop */}
           <aside className="hidden lg:block lg:w-64 xl:w-80 bg-gray-50 border-l border-gray-200 p-6 overflow-y-auto scrollbar-hide animate-in slide-in-from-right duration-700">
             <div className="space-y-6">
-              <div>
+              <div data-tutorial="quick-stats">
                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Quick Stats</h3>
                 <div className="space-y-3">
                   <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
@@ -1347,7 +1361,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div>
+              <div data-tutorial="financing-options">
                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Financing Options</h3>
                 <div className="space-y-2">
                   {/* Cash Purchase Option */}
@@ -1434,6 +1448,9 @@ const Index = () => {
           }
         })}
       />
+
+      {/* Onboarding Tutorial */}
+      <OnboardingTutorial isOpen={showTutorial} onClose={() => setShowTutorial(false)} />
     </div>
   );
 };
