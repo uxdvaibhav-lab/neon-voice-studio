@@ -664,8 +664,8 @@ const Index = () => {
         {/* App Content */}
         <div className="flex h-screen relative">
           {/* Left Sidebar - Hidden on mobile, visible on tablet+ */}
-          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center py-6 animate-in slide-in-from-left duration-500">
-            <nav className="flex flex-col items-center gap-2 flex-1">
+          <aside className="hidden md:flex w-12 md:w-16 bg-gray-50 border-r border-gray-200 flex-col items-center animate-in slide-in-from-left duration-500 h-full">
+            <nav className="flex flex-col items-center gap-2 pt-6">
               {navItems.map((item, index) => (
                 <button
                   key={index}
@@ -678,13 +678,15 @@ const Index = () => {
               ))}
             </nav>
 
-            <button
-              className="p-3 rounded-lg text-gray-500 hover:bg-accent hover:text-accent-foreground transition-all duration-200"
-              aria-label="Settings"
-              title="Settings"
-            >
-              <Settings className="w-5 h-5" strokeWidth={1.5} />
-            </button>
+            <div className="mt-auto pb-6">
+              <button
+                className="p-3 rounded-lg text-gray-500 hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+                aria-label="Settings"
+                title="Settings"
+              >
+                <Settings className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+            </div>
           </aside>
 
           {/* Main Content Area - Full width on mobile */}
