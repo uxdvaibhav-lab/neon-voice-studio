@@ -240,10 +240,12 @@ export const DesignControlMenu = ({
 
         {/* Actions */}
         <div className="space-y-2">
-          {onExportPDF && <Button variant="default" size="sm" className="w-full" onClick={onExportPDF}>
-              <Download className="w-4 h-4 mr-2" />
-              Export to PDF
-            </Button>}
+          <Button variant="default" size="sm" className="w-full" onClick={() => console.log("Apply design")}>
+            Apply Design
+          </Button>
+          <Button variant="outline" size="sm" className="w-full" onClick={() => console.log("Reset to default")}>
+            Reset to Default
+          </Button>
         </div>
       </div>
     </ScrollArea>;

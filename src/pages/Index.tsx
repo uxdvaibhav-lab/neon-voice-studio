@@ -696,8 +696,7 @@ const Index = () => {
                   <img src={thumbHero} alt="Solar home" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div className="mb-6 relative z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Sun className="w-8 h-8 text-orange-600" />
+                  <div className="mb-4">
                     <h2 className="text-3xl font-bold">A Solar Solution, Designed for You</h2>
                   </div>
                   <EditableTextMock multiline className="text-lg text-gray-900/90 leading-relaxed">
@@ -750,10 +749,7 @@ const Index = () => {
 
               {/* Section 3: Current Situation Analysis */}
               <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <TrendingUp className="w-6 h-6 text-orange-600" />
-                  <h2 className="text-2xl font-bold text-gray-900">Current Situation Analysis</h2>
-                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Current Situation Analysis</h2>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="border border-gray-200 rounded-lg p-4">
@@ -867,10 +863,7 @@ const Index = () => {
 
               {/* Section 6: Battery + Energy Independence */}
               <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-600">
-                <div className="flex items-center gap-3 mb-4">
-                  <Battery className="w-6 h-6 text-orange-600" />
-                  <h2 className="text-2xl font-bold text-gray-900">Battery + Energy Independence</h2>
-                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Battery + Energy Independence</h2>
                 <div className="mb-4">
                   <img src={thumbBenefits} alt="Battery backup system" className="w-full max-w-sm mx-auto rounded-lg mb-4" />
                 </div>
@@ -1319,8 +1312,7 @@ const Index = () => {
                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Quick Stats</h3>
                 <div className="space-y-3">
                   <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
-                    <div className="flex items-center gap-2 mb-1">
-                      <TrendingUp className="w-4 h-4 text-orange-600" />
+                    <div className="mb-1">
                       <EditableTextMock
                         className="text-xs text-gray-500"
                         improvedText="Return on Investment Timeline"
@@ -1333,8 +1325,7 @@ const Index = () => {
                     </EditableTextMock>
                   </div>
                   <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
-                    <div className="flex items-center gap-2 mb-1">
-                      <DollarSign className="w-4 h-4 text-orange-600" />
+                    <div className="mb-1">
                       <EditableTextMock className="text-xs text-gray-500" improvedText="Total Lifetime Savings">
                         <div className="text-xs text-gray-500">25-Year Savings</div>
                       </EditableTextMock>
@@ -1344,8 +1335,7 @@ const Index = () => {
                     </EditableTextMock>
                   </div>
                   <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Sun className="w-4 h-4 text-orange-600" />
+                    <div className="mb-1">
                       <EditableTextMock className="text-xs text-gray-500" improvedText="Carbon Emissions Offset">
                         <div className="text-xs text-gray-500">CO₂ Offset</div>
                       </EditableTextMock>
@@ -1377,9 +1367,7 @@ const Index = () => {
                           <div className="text-xs text-gray-500">One-time payment</div>
                         </div>
                       </div>
-                      {selectedFinancing === "cash" && (
-                        <div className="text-xs font-medium text-brand-orange">Selected</div>
-                      )}
+
                     </div>
                   </button>
 
@@ -1400,9 +1388,7 @@ const Index = () => {
                           <div className="text-xs text-gray-500">Monthly payments</div>
                         </div>
                       </div>
-                      {selectedFinancing === "loan" && (
-                        <div className="text-xs font-medium text-brand-orange">Selected</div>
-                      )}
+
                     </div>
                   </button>
 
@@ -1423,9 +1409,7 @@ const Index = () => {
                           <div className="text-xs text-gray-500">Low monthly cost</div>
                         </div>
                       </div>
-                      {selectedFinancing === "lease" && (
-                        <div className="text-xs font-medium text-brand-orange">Selected</div>
-                      )}
+
                     </div>
                   </button>
                 </div>
