@@ -137,9 +137,9 @@ const InteractiveBreakevenChart = () => {
           );
         })}
         
-        <text x="200" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Breakeven</text>
-        <text x="470" y="20" textAnchor="middle" className="text-sm font-semibold fill-orange-600">Pure Savings Years 7-25</text>
-        <text x="740" y="60" textAnchor="middle" className="text-sm font-semibold fill-orange-600">$68,420</text>
+        <text x="200" y="20" textAnchor="middle" className="text-sm font-semibold fill-gray-900">Breakeven</text>
+        <text x="470" y="20" textAnchor="middle" className="text-sm font-semibold fill-gray-900">Pure Savings Years 7-25</text>
+        <text x="740" y="60" textAnchor="middle" className="text-sm font-semibold fill-gray-900">$68,420</text>
       </svg>
       
       {hoveredPoint && (
@@ -148,7 +148,7 @@ const InteractiveBreakevenChart = () => {
           style={{left: mousePos.x + 10, top: mousePos.y + 10}}
         >
           <div className="font-semibold">Year {hoveredPoint.year}</div>
-          <div className="text-orange-300">
+          <div className="text-gray-300">
             {hoveredPoint.savings >= 0 ? `+$${hoveredPoint.savings.toLocaleString()}` : `-$${Math.abs(hoveredPoint.savings).toLocaleString()}`}
           </div>
         </div>
@@ -777,26 +777,26 @@ const Index = () => {
               <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-400">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">How Solar Works for You</h2>
                 <div className="mb-6">
-                  <div className="flex items-center justify-center gap-4 p-6 bg-orange-50 rounded-lg mb-4">
+                  <div className="flex items-center justify-center gap-4 p-6 bg-gray-50 rounded-lg mb-4">
                     <div className="text-center">
-                      <Sun className="w-12 h-12 text-orange-600 mx-auto mb-2" />
+                      <Sun className="w-12 h-12 text-gray-600 mx-auto mb-2" />
                       <p className="text-sm font-medium">Solar Panels</p>
                     </div>
-                    <div className="text-orange-600">→</div>
+                    <div className="text-gray-600">→</div>
                     <div className="text-center">
-                      <Battery className="w-12 h-12 text-orange-600 mx-auto mb-2" />
+                      <Battery className="w-12 h-12 text-gray-600 mx-auto mb-2" />
                       <p className="text-sm font-medium">Inverter</p>
                     </div>
-                    <div className="text-orange-600">→</div>
+                    <div className="text-gray-600">→</div>
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                      <div className="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <span className="text-white font-bold">H</span>
                       </div>
                       <p className="text-sm font-medium">Your Home</p>
                     </div>
-                    <div className="text-orange-600">→</div>
+                    <div className="text-gray-600">→</div>
                     <div className="text-center">
-                      <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-2" />
+                      <TrendingUp className="w-12 h-12 text-gray-600 mx-auto mb-2" />
                       <p className="text-sm font-medium">Grid Credits</p>
                     </div>
                   </div>
@@ -834,8 +834,8 @@ const Index = () => {
                   </div>
                   <div className="border border-gray-200 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-1">Annual Production</div>
-                    <EditableTextMock className="text-2xl font-bold text-orange-600">
-                      <div className="text-2xl font-bold text-orange-600">16,800 kWh</div>
+                    <EditableTextMock className="text-2xl font-bold text-gray-900">
+                      <div className="text-2xl font-bold text-gray-900">16,800 kWh</div>
                     </EditableTextMock>
                   </div>
                 </div>
@@ -926,21 +926,21 @@ const Index = () => {
                     <div className="border border-gray-200 rounded-lg p-5 flex flex-col">
                       <div className="font-semibold text-gray-900 mb-3">Cash Purchase</div>
                       <EditableTextMock>
-                        <div className="text-3xl font-bold text-orange-600 mb-2">$18,375</div>
+                        <div className="text-3xl font-bold text-gray-900 mb-2">$18,375</div>
                       </EditableTextMock>
                       <p className="text-sm text-gray-600 mt-auto">After 30% Federal ITC</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5 flex flex-col">
                       <div className="font-semibold text-gray-900 mb-3">Solar Loan</div>
                       <EditableTextMock>
-                        <div className="text-3xl font-bold text-orange-600 mb-2">$175/mo</div>
+                        <div className="text-3xl font-bold text-gray-900 mb-2">$175/mo</div>
                       </EditableTextMock>
                       <p className="text-sm text-gray-600 mt-auto">20-year term, 4.99% APR</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5 flex flex-col">
                       <div className="font-semibold text-gray-900 mb-3">Lease/PPA</div>
                       <EditableTextMock>
-                        <div className="text-3xl font-bold text-orange-600 mb-2">$145/mo</div>
+                        <div className="text-3xl font-bold text-gray-900 mb-2">$145/mo</div>
                       </EditableTextMock>
                       <p className="text-sm text-gray-600 mt-auto">25-year agreement</p>
                     </div>
@@ -948,9 +948,9 @@ const Index = () => {
                 </div>
 
                 {/* Incentives */}
-                <div className="border border-orange-200 bg-orange-50 rounded-lg p-5">
-                  <h4 className="font-semibold text-orange-900 mb-3">Available Incentives</h4>
-                  <ul className="space-y-2 text-sm text-orange-800">
+                <div className="border border-gray-200 bg-gray-50 rounded-lg p-5">
+                  <h4 className="font-semibold text-gray-900 mb-3">Available Incentives</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
                       <span>Federal ITC: 30% tax credit ($7,875)</span>
@@ -974,8 +974,8 @@ const Index = () => {
                 <div className="mb-6">
                   <div className="text-center mb-6">
                     <div className="text-sm text-gray-600 mb-1">Total 25-Year Savings</div>
-                    <EditableTextMock className="text-5xl font-bold text-orange-600">
-                      <div className="text-5xl font-bold text-orange-600">$68,420</div>
+                    <EditableTextMock className="text-5xl font-bold text-gray-900">
+                      <div className="text-5xl font-bold text-gray-900">$68,420</div>
                     </EditableTextMock>
                   </div>
 
@@ -989,22 +989,22 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="text-center p-4 border border-gray-200 rounded-lg">
                       <div className="text-sm text-gray-600 mb-1">Year 6: Breakeven</div>
-                      <div className="text-xl font-bold text-orange-600">System Paid Off</div>
+                      <div className="text-xl font-bold text-gray-900">System Paid Off</div>
                     </div>
                     <div className="text-center p-4 border border-gray-200 rounded-lg">
                       <div className="text-sm text-gray-600 mb-1">Years 7-25</div>
-                      <div className="text-xl font-bold text-orange-600">Pure Savings</div>
+                      <div className="text-xl font-bold text-gray-900">Pure Savings</div>
                     </div>
                     <div className="text-center p-4 border border-gray-200 rounded-lg">
                       <div className="text-sm text-gray-600 mb-1">Home Value</div>
-                      <EditableTextMock className="text-xl font-bold text-orange-600">
-                        <div className="text-xl font-bold text-orange-600">+$21,000</div>
+                      <EditableTextMock className="text-xl font-bold text-gray-900">
+                        <div className="text-xl font-bold text-gray-900">+$21,000</div>
                       </EditableTextMock>
                     </div>
                   </div>
                 </div>
 
-                <div className="border-l-4 border-orange-500 p-4 bg-orange-50/30">
+                <div className="border-l-4 border-gray-500 p-4 bg-gray-50/30">
                   <EditableTextMock multiline>
                     <p className="text-gray-700 leading-relaxed italic">
                       <strong>Imagine Year 6:</strong> System paid for itself. <strong>Years 7-25:</strong> Pure savings
@@ -1020,7 +1020,7 @@ const Index = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Common Questions Answered</h2>
 
                 <div className="space-y-4">
-                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-orange-200">
+                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-300">
                     <summary className="font-semibold text-gray-900">Does this void my roof warranty?</summary>
                     <EditableTextMock multiline>
                       <p className="mt-3 text-gray-700 text-sm">
@@ -1031,7 +1031,7 @@ const Index = () => {
                     </EditableTextMock>
                   </details>
 
-                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-orange-200">
+                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-300">
                     <summary className="font-semibold text-gray-900">What about cloudy days?</summary>
                     <EditableTextMock multiline>
                       <p className="mt-3 text-gray-700 text-sm">
@@ -1041,7 +1041,7 @@ const Index = () => {
                     </EditableTextMock>
                   </details>
 
-                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-orange-200">
+                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-300">
                     <summary className="font-semibold text-gray-900">What if I sell my house?</summary>
                     <EditableTextMock multiline>
                       <p className="mt-3 text-gray-700 text-sm">
@@ -1052,7 +1052,7 @@ const Index = () => {
                     </EditableTextMock>
                   </details>
 
-                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-orange-200">
+                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-300">
                     <summary className="font-semibold text-gray-900">What about maintenance?</summary>
                     <EditableTextMock multiline>
                       <p className="mt-3 text-gray-700 text-sm">
@@ -1063,7 +1063,7 @@ const Index = () => {
                     </EditableTextMock>
                   </details>
 
-                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-orange-200">
+                  <details className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-300">
                     <summary className="font-semibold text-gray-900">Is my roof strong enough?</summary>
                     <EditableTextMock multiline>
                       <p className="mt-3 text-gray-700 text-sm">
@@ -1084,17 +1084,17 @@ const Index = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-orange-600 mb-2">15+</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">15+</div>
                     <div className="text-sm text-gray-600">Years in Business</div>
                   </div>
                   <div className="text-center">
-                    <EditableTextMock className="text-4xl font-bold text-orange-600 mb-2">
-                      <div className="text-4xl font-bold text-orange-600">2,847</div>
+                    <EditableTextMock className="text-4xl font-bold text-gray-900 mb-2">
+                      <div className="text-4xl font-bold text-gray-900">2,847</div>
                     </EditableTextMock>
                     <div className="text-sm text-gray-600">Systems Installed</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-orange-600 mb-2">4.9★</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">4.9★</div>
                     <div className="text-sm text-gray-600">Customer Rating</div>
                   </div>
                 </div>
@@ -1149,7 +1149,7 @@ const Index = () => {
 
                 <div className="space-y-4 mb-6">
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 border-2 border-orange-500 rounded-full flex items-center justify-center text-orange-600 font-bold">
+                    <div className="flex-shrink-0 w-8 h-8 border-2 border-gray-500 rounded-full flex items-center justify-center text-gray-600 font-bold">
                       1
                     </div>
                     <div>
@@ -1160,7 +1160,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 border-2 border-orange-500 rounded-full flex items-center justify-center text-orange-600 font-bold">
+                    <div className="flex-shrink-0 w-8 h-8 border-2 border-gray-500 rounded-full flex items-center justify-center text-gray-600 font-bold">
                       2
                     </div>
                     <div>
@@ -1174,7 +1174,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 border-2 border-orange-500 rounded-full flex items-center justify-center text-orange-600 font-bold">
+                    <div className="flex-shrink-0 w-8 h-8 border-2 border-gray-500 rounded-full flex items-center justify-center text-gray-600 font-bold">
                       3
                     </div>
                     <div>
@@ -1187,10 +1187,10 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="border border-orange-200 rounded-lg p-4">
-                  <div className="font-semibold text-orange-900 mb-2">Your Project Manager</div>
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <div className="font-semibold text-gray-900 mb-2">Your Project Manager</div>
                   <EditableTextMock multiline>
-                    <p className="text-sm text-orange-700">
+                    <p className="text-sm text-gray-700">
                       Alex Thompson | (555) 123-4567 | alex@sundraftsolar.com
                       <br />
                       Available to answer questions throughout the entire process.
@@ -1224,7 +1224,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="border-l-4 border-orange-500 p-4 bg-orange-50/30">
+                <div className="border-l-4 border-gray-500 p-4 bg-gray-50/30">
                   <EditableTextMock multiline>
                     <p className="text-gray-700 leading-relaxed italic">
                       <strong>
@@ -1264,9 +1264,9 @@ const Index = () => {
               <section className="bg-white rounded-lg border-2 border-dashed border-gray-300 p-6 animate-in fade-in duration-700 delay-1400">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">What Happens After Approval?</h2>
 
-                <div className="space-y-3 text-sm text-orange-500">
+                <div className="space-y-3 text-sm text-gray-700">
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 border border-orange-500 rounded-full flex items-center justify-center text-orange-500 text-xs font-regular">
+                    <div className="flex-shrink-0 w-6 h-6 border border-gray-500 rounded-full flex items-center justify-center text-gray-600 text-xs font-regular">
                       1
                     </div>
                     <div>
@@ -1275,7 +1275,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 border border-orange-500 rounded-full flex items-center justify-center text-orange-500 text-xs font-regular">
+                    <div className="flex-shrink-0 w-6 h-6 border border-gray-500 rounded-full flex items-center justify-center text-gray-600 text-xs font-regular">
                       2
                     </div>
                     <div>
@@ -1284,7 +1284,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 border border-orange-500 rounded-full flex items-center justify-center text-orange-500  text-xs font-regular">
+                    <div className="flex-shrink-0 w-6 h-6 border border-gray-500 rounded-full flex items-center justify-center text-gray-600 text-xs font-regular">
                       3
                     </div>
                     <div>
