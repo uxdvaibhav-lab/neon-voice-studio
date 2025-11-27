@@ -661,18 +661,18 @@ const Index = () => {
               ))}
             </nav>
 
-            <div className="mt-auto pb-6 space-y-2">
+            <div className="mt-auto pb-6 flex flex-col items-center gap-2">
               {/* Profile Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="p-3 rounded-lg h-auto w-auto">
-                    <Avatar className="h-5 w-5 border border-border hover:border-muted-foreground transition-colors">
+                  <button className="p-3 rounded-lg text-gray-500 hover:bg-accent hover:text-accent-foreground transition-all duration-200">
+                    <Avatar className="h-5 w-5">
                       <AvatarImage src={mockCurrentUser.avatar} alt="User" />
                       <AvatarFallback className="bg-primary text-primary-foreground text-[10px] font-medium">
                         {mockCurrentUser.initials}
                       </AvatarFallback>
                     </Avatar>
-                  </Button>
+                  </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
                   <ProfileMenu user={mockCurrentUser} onSignOut={() => console.log("Sign out")} />
