@@ -614,7 +614,7 @@ const Index = () => {
 
             {/* Preview Button */}
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
               className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
               onClick={() => navigate("/preview")}
