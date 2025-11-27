@@ -131,7 +131,20 @@ const PreviewProposal = () => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="hidden sm:flex">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="hidden sm:flex"
+              onClick={() => toast.success("PDF downloaded successfully!", {
+                position: "bottom-center",
+                duration: 3000,
+                style: {
+                  background: "#f97316",
+                  color: "white",
+                  border: "none"
+                }
+              })}
+            >
               <Download className="w-4 h-4 mr-2" />
               Download PDF
             </Button>
