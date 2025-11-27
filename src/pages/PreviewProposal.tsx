@@ -175,13 +175,9 @@ const PreviewProposal = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 md:px-6 py-8 max-w-5xl">
         {/* Section 1: Personalized Cover Letter */}
-        <section className="bg-white text-gray-900 rounded-lg border border-gray-200 p-6 sm:p-8 mb-6 animate-in fade-in duration-700 delay-100 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-            <img src={thumbHero} alt="Solar home" className="w-full h-full object-cover rounded-lg" />
-          </div>
-          <div className="mb-6 relative z-10">
-            <div className="flex items-center gap-3 mb-4">
-              <Sun className="w-8 h-8 text-orange-600" />
+        <section className="bg-white text-gray-900 rounded-lg border border-gray-200 p-6 sm:p-8 mb-6 animate-in fade-in duration-700 delay-100">
+          <div className="mb-6">
+            <div className="mb-4">
               <h2 className="text-3xl font-bold">A Solar Solution, Designed for You</h2>
             </div>
             <p className="text-lg text-gray-900/90 leading-relaxed">
@@ -257,6 +253,31 @@ const PreviewProposal = () => {
         {/* Section 4: How Solar Works for You */}
         <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-400">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">How Solar Works for You</h2>
+          <div className="mb-6">
+            <div className="flex items-center justify-center gap-4 p-6 bg-gray-50 rounded-lg mb-4">
+              <div className="text-center">
+                <Sun className="w-12 h-12 text-gray-600 mx-auto mb-2" />
+                <p className="text-sm font-medium">Solar Panels</p>
+              </div>
+              <div className="text-gray-600">→</div>
+              <div className="text-center">
+                <Battery className="w-12 h-12 text-gray-600 mx-auto mb-2" />
+                <p className="text-sm font-medium">Inverter</p>
+              </div>
+              <div className="text-gray-600">→</div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <span className="text-white font-bold">H</span>
+                </div>
+                <p className="text-sm font-medium">Your Home</p>
+              </div>
+              <div className="text-gray-600">→</div>
+              <div className="text-center">
+                <TrendingUp className="w-12 h-12 text-gray-600 mx-auto mb-2" />
+                <p className="text-sm font-medium">Grid Credits</p>
+              </div>
+            </div>
+          </div>
           <p className="text-gray-700 leading-relaxed mb-4">
             Solar panels capture sunlight → inverter converts to electricity → powers your home → excess flows
             to grid → you get credits. Unlike generic solar, we've customized this specifically for your roof
@@ -292,7 +313,8 @@ const PreviewProposal = () => {
             roof's east-facing slope, avoids shade from mature oak trees on the west side. Using Tier-1 panels
             rated for 25 years with industry-leading inverter efficiency.
           </p>
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50">
+          <div className="border-2 border-dashed border-orange-300 rounded-lg p-8 text-center bg-orange-50 relative">
+            <img src={thumbSystem} alt="Solar system layout" className="w-full max-w-md mx-auto rounded-lg mb-4 opacity-80" />
             <p className="text-sm text-gray-700 font-medium mb-2">Interactive 3D System Layout</p>
             <p className="text-xs text-gray-600">32 panels optimally positioned on your east-facing roof slope</p>
           </div>
@@ -301,6 +323,9 @@ const PreviewProposal = () => {
         {/* Section 6: Battery + Energy Independence */}
         <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-600">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Battery + Energy Independence</h2>
+          <div className="mb-4">
+            <img src={thumbBenefits} alt="Battery backup system" className="w-full max-w-sm mx-auto rounded-lg mb-4" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div className="border border-gray-200 rounded-lg p-4">
               <div className="text-sm text-gray-600 mb-1">Backup Capacity</div>
@@ -484,6 +509,9 @@ const PreviewProposal = () => {
         {/* Section 10: Why Choose Our Company */}
         <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-1000">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Our Company</h2>
+          <div className="mb-6">
+            <img src={thumbCompany} alt="Our professional team" className="w-full max-w-lg mx-auto rounded-lg" />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="text-center">
@@ -513,7 +541,10 @@ const PreviewProposal = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="border border-gray-200 rounded-lg p-4">
-              <div className="font-semibold text-gray-900 mb-2">Customer Testimonial</div>
+              <div className="flex items-center gap-3 mb-3">
+                <img src={avatarJane} alt="Sarah M." className="w-12 h-12 rounded-full" />
+                <div className="font-semibold text-gray-900">Customer Testimonial</div>
+              </div>
               <p className="text-sm text-gray-700 italic">
                 "System exceeded projections by 3%. Installation was seamless, and the team answered every
                 question. Best decision we made for our home."
@@ -521,7 +552,10 @@ const PreviewProposal = () => {
               <p className="text-xs text-gray-600 mt-2">— Sarah M., Sunnyvale</p>
             </div>
             <div className="border border-gray-200 rounded-lg p-4">
-              <div className="font-semibold text-gray-900 mb-2">Customer Testimonial</div>
+              <div className="flex items-center gap-3 mb-3">
+                <img src={avatarMike} alt="Michael D." className="w-12 h-12 rounded-full" />
+                <div className="font-semibold text-gray-900">Customer Testimonial</div>
+              </div>
               <p className="text-sm text-gray-700 italic">
                 "Worried about roof warranty at first, but they explained everything. Three years later, zero
                 issues and I'm saving $180/month."
@@ -534,6 +568,9 @@ const PreviewProposal = () => {
         {/* Section 11: Installation Timeline & Process */}
         <section className="bg-white rounded-lg border border-gray-200 p-6 mb-6 animate-in fade-in duration-700 delay-1100">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Installation Timeline & Process</h2>
+          <div className="mb-6">
+            <img src={thumbTimeline} alt="Installation process" className="w-full max-w-lg mx-auto rounded-lg" />
+          </div>
 
           <div className="space-y-4 mb-6">
             <div className="flex gap-4">
