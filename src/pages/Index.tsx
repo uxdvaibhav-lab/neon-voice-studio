@@ -18,9 +18,9 @@ import {
   LayoutDashboard,
   ClipboardList,
   PenTool,
-  Battery,
+  Zap,
   FileText,
-  FileCheck,
+  Shield,
   Settings,
   ChevronDown,
   Palette,
@@ -474,7 +474,7 @@ const Index = () => {
       label: "Design Tool",
     },
     {
-      icon: Battery,
+      icon: Zap,
       label: "Battery Design",
     },
     {
@@ -483,7 +483,7 @@ const Index = () => {
       active: true,
     },
     {
-      icon: FileCheck,
+      icon: Shield,
       label: "Permit",
     },
   ];
@@ -661,7 +661,7 @@ const Index = () => {
               ))}
             </nav>
 
-            <div className="mt-auto pb-6 flex flex-col items-center gap-2">
+            <div className="mt-auto pb-6">
               {/* Profile Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -678,14 +678,6 @@ const Index = () => {
                   <ProfileMenu user={mockCurrentUser} onSignOut={() => console.log("Sign out")} />
                 </DropdownMenuContent>
               </DropdownMenu>
-              
-              <button
-                className="p-3 rounded-lg text-gray-500 hover:bg-accent hover:text-accent-foreground transition-all duration-200"
-                aria-label="Settings"
-                title="Settings"
-              >
-                <Settings className="w-5 h-5" strokeWidth={1.5} />
-              </button>
             </div>
           </aside>
 
@@ -693,11 +685,8 @@ const Index = () => {
           <main className="flex-1 overflow-y-auto scrollbar-hide animate-in slide-in-from-bottom duration-700 lg:ml-12 xl:ml-16">
             <div className="p-4 sm:p-6 md:p-8 pb-0 space-y-6 sm:space-y-8">
               {/* Section 1: Personalized Cover Letter */}
-              <section className="bg-white text-gray-900 rounded-lg border border-gray-200 p-6 sm:p-8 mb-6 animate-in fade-in duration-700 delay-100 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-                  <img src={thumbHero} alt="Solar home" className="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div className="mb-6 relative z-10">
+              <section className="bg-white text-gray-900 rounded-lg border border-gray-200 p-6 sm:p-8 mb-6 animate-in fade-in duration-700 delay-100">
+                <div className="mb-6">
                   <div className="mb-4">
                     <h2 className="text-3xl font-bold">A Solar Solution, Designed for You</h2>
                   </div>
@@ -724,26 +713,26 @@ const Index = () => {
                     </p>
                   </EditableTextMock>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="border border-orange-200 rounded-lg p-4">
+                    <div className="border border-gray-200 rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <Battery className="w-5 h-5 text-orange-600" />
-                        <div className="font-semibold text-orange-900">Energy Independence</div>
+                        <Battery className="w-5 h-5 text-gray-600" />
+                        <div className="font-semibold text-gray-900">Energy Independence</div>
                       </div>
-                      <p className="text-sm text-orange-700">Protect against future rate hikes</p>
+                      <p className="text-sm text-gray-700">Protect against future rate hikes</p>
                     </div>
-                    <div className="border border-orange-200 rounded-lg p-4">
+                    <div className="border border-gray-200 rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <DollarSign className="w-5 h-5 text-orange-600" />
-                        <div className="font-semibold text-orange-900">30% Tax Credit</div>
+                        <DollarSign className="w-5 h-5 text-gray-600" />
+                        <div className="font-semibold text-gray-900">30% Tax Credit</div>
                       </div>
-                      <p className="text-sm text-orange-700">Federal ITC expires soon</p>
+                      <p className="text-sm text-gray-700">Federal ITC expires soon</p>
                     </div>
-                    <div className="border border-orange-200 rounded-lg p-4">
+                    <div className="border border-gray-200 rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <Sun className="w-5 h-5 text-orange-600" />
-                        <div className="font-semibold text-orange-900">Carbon Offset</div>
+                        <Sun className="w-5 h-5 text-gray-600" />
+                        <div className="font-semibold text-gray-900">Carbon Offset</div>
                       </div>
-                      <p className="text-sm text-orange-700">Reduce environmental impact</p>
+                      <p className="text-sm text-gray-700">Reduce environmental impact</p>
                     </div>
                   </div>
                 </div>
@@ -818,9 +807,9 @@ const Index = () => {
                     orientation, your consumption pattern, and your energy goals.
                   </p>
                 </EditableTextMock>
-                <div className="border border-orange-200 rounded-lg p-4">
-                  <div className="font-semibold text-orange-900 mb-2">Your System Captures 94% of Peak Consumption</div>
-                  <p className="text-sm text-orange-700">
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <div className="font-semibold text-gray-900 mb-2">Your System Captures 94% of Peak Consumption</div>
+                  <p className="text-sm text-gray-700">
                     Optimized for your east-facing slope and seasonal usage patterns
                   </p>
                 </div>
@@ -1214,19 +1203,19 @@ const Index = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Now?</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  <div className="border border-orange-200 rounded-lg p-4">
-                    <div className="font-semibold text-orange-900 mb-2">Federal ITC Expires</div>
+                  <div className="border border-gray-200 rounded-lg p-4">
+                    <div className="font-semibold text-gray-900 mb-2">Federal ITC Expires</div>
                     <EditableTextMock multiline>
-                      <p className="text-sm text-orange-700">
+                      <p className="text-sm text-gray-700">
                         30% tax credit available through 2032, then drops to 26%. For your system, that's{" "}
                         <strong>$1,050 in lost savings</strong> if you wait.
                       </p>
                     </EditableTextMock>
                   </div>
-                  <div className="border border-orange-200 rounded-lg p-4">
-                    <div className="font-semibold text-orange-900 mb-2">Limited Installation Slots</div>
+                  <div className="border border-gray-200 rounded-lg p-4">
+                    <div className="font-semibold text-gray-900 mb-2">Limited Installation Slots</div>
                     <EditableTextMock multiline>
-                      <p className="text-sm text-orange-700">
+                      <p className="text-sm text-gray-700">
                         Current installer availability fills by [Month]. Lock in summer installation to maximize
                         first-year production.
                       </p>
@@ -1277,7 +1266,7 @@ const Index = () => {
                 <div className="space-y-3 text-sm text-orange-500">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 border border-orange-500 rounded-full flex items-center justify-center text-orange-500 text-xs font-regular">
-                      ✓
+                      1
                     </div>
                     <div>
                       <div className="font-semibold">Next: We file permits (we handle it)</div>
