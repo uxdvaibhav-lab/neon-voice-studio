@@ -520,7 +520,7 @@ const Index = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
+                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent focus-visible:ring-0"
                 >
                   <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Document</span>
@@ -548,7 +548,7 @@ const Index = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
+                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent focus-visible:ring-0"
                 >
                   <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Design</span>
@@ -580,7 +580,7 @@ const Index = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent relative"
+                  className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent relative focus-visible:ring-0"
                 >
                   <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Team</span>
@@ -616,7 +616,7 @@ const Index = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent"
+              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 text-foreground hover:text-foreground hover:bg-accent focus-visible:ring-0"
               onClick={() => navigate("/preview")}
             >
               <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -626,7 +626,7 @@ const Index = () => {
             {/* Send Proposal Button */}
             <Button
               size="sm"
-              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 bg-brand-orange hover:bg-brand-orange/90 text-white"
+              className="gap-1 sm:gap-2 px-2 sm:px-3 h-8 sm:h-9 bg-brand-orange hover:bg-brand-orange/90 text-white focus-visible:ring-0"
               onClick={() => toast.success("Proposal sent successfully!", {
                 position: "bottom-center",
                 duration: 3000,
@@ -665,10 +665,10 @@ const Index = () => {
               {/* Profile Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="rounded-full p-0 h-10 w-10">
-                    <Avatar className="h-10 w-10 border-2 border-border hover:border-muted-foreground transition-colors">
+                  <Button variant="ghost" className="p-3 rounded-lg h-auto w-auto">
+                    <Avatar className="h-5 w-5 border border-border hover:border-muted-foreground transition-colors">
                       <AvatarImage src={mockCurrentUser.avatar} alt="User" />
-                      <AvatarFallback className="bg-primary text-primary-foreground text-xs font-medium">
+                      <AvatarFallback className="bg-primary text-primary-foreground text-[10px] font-medium">
                         {mockCurrentUser.initials}
                       </AvatarFallback>
                     </Avatar>
